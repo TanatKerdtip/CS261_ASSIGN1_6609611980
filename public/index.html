@@ -5,20 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="/img/TU_icon.webp" type="image/x-icon">
 </head>
 <body>
     <div class="login-container">
-        <h1>Login</h1>
+        <img src="/img/Emblem_of_Thammasat_University.svg.png" alt="Logo" class="centered-logo">
+        <h2>Login</h2>
+        <hr>
+        <!-- FORM -->
         <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Student ID" value="6609611980" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="password" value="1909802895415" required>
+            </div>  
+            <p id="errorMessage" class="error-message"></p>
             <button type="button" onclick="submitLogin()">Login</button>
-            <button type="button" onclick="call_REST_API_Hello()">Hello</button>
         </form>
-        <p id="message"></p>
+        <!-- FORM -->
+
+        <!-- Display login Block -->
+        <div id="loginBox" class="login-box" style="display:none;">
+        </div>
     </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
