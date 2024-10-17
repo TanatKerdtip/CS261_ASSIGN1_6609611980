@@ -19,16 +19,15 @@ function submitLogin() {
     }
 
     const requestBody = {
-        UserName: username, 
-        PassWord: password  
+        UserName: username,
+        PassWord: password
     };
 
-    // Fetch API
     fetch('https://restapi.tu.ac.th/api/v1/auth/Ad/verify', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            "Application-Key": "",
+            "Application-Key": "", 
         },
         body: JSON.stringify(requestBody)
     })
@@ -39,7 +38,7 @@ function submitLogin() {
         return response.json();
     })
     .then(data => {
-        if ( data.displayname_th && data.displayname_en && data.email && data.department && data.faculty) {
+        if (data.displayname_th && data.displayname_en && data.email && data.department && data.faculty) {
             loginBox.innerHTML = `
                 <p><strong>Name (EN):</strong> ${data.displayname_en}</p>
                 <p><strong>ชื่อ (ภาษาไทย):</strong> ${data.displayname_th}</p>
@@ -47,6 +46,7 @@ function submitLogin() {
                 <p><strong>Faculty:</strong> ${data.faculty}</p>
                 <p><strong>Department:</strong> ${data.department}</p>
                 <p><strong>StudentID:</strong> ${data.username}</p>
+                <button id="closeBtn" class="close-btn" onclick="closeLoginBox()">Close</button>
             `;
         } else {
             loginBox.innerHTML = `<p>Login successful, but some information is missing from the response.</p>`;
@@ -60,3 +60,8 @@ function submitLogin() {
         loginBox.style.display = "block";
     });
 }
+
+function closeLoginBox() {
+    document.getElementById('loginBox').style.display = 'none';
+}
+

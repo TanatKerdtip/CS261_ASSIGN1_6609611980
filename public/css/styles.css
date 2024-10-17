@@ -1,12 +1,17 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f2f5;
-    text-align: center; 
+    background-image: url('/img/BG.jpg');
+    background-position: center; 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-color: #fcd91354;
+    background-blend-mode: multiply;
 }
 .login-container img {
     display: block;
@@ -21,8 +26,8 @@ body {
     border-radius: 15px;
     box-shadow: 0 10px 100px rgba(255, 145, 0, 0.1);
     width: 100%; 
-    max-width: 400px; 
-    box-sizing: border-box;
+    max-width: 400px;
+    opacity: 0.9;
 }
 
 h2 {
@@ -63,7 +68,7 @@ button {
     background-color: #679fdb;
     color: white;
     border: none;
-    border-radius: 45px; 
+    border-radius: 30px; 
     cursor: pointer;
     font-size: 1.2rem;
     margin: 20px auto 0 auto; 
@@ -87,13 +92,27 @@ button:active {
 }
 .login-box {
     margin-top: 20px;
-    padding: 15px;
+    padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+    border-radius: 10px;
+    background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
+}
+.close-btn {
+    background-color: #ff4e4e;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0 auto;
 }
 
+.close-btn:hover {
+    background-color: #ff1a1a;
+}
 
 /* Media queries สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 576px) {
